@@ -186,9 +186,183 @@ while True:
 print("Go here on break")
 ```
 
-
-
 ## Module 2: Strings and Collections
+
+* str
+* bytes
+* list
+* dict
+
+### Strings
+
+Strings are immutable in Python and can be quoted using either single or double quotes.
+
+Adjacent quoted strings are concatenated by Python
+
+Example:
+
+"first" "second" becomes "firstsecond"
+
+The string constructor, like other constructors in Python, can be used to convert other types into strings.
+
+Example:
+
+str(496) will return '496'
+
+str(6.02) will return '6.02'
+
+#### Strings with Newlines
+
+Three double or single quotes can be used to do multiline strings
+
+Example:
+
+"""This is
+
+a multiline
+
+string"""
+
+This is echoed back as:
+
+'This is \na multiline\nstring'
+
+The \n new line characters embedded in the string
+
+As an alternative, you can simply place the \n characters in a string to achieve the same effect in Python.
+
+Example:
+
+"This is \na multiline\nstring" would be rendered the same as above on multiple lines
+
+NOTE:  \n is multi-platform - called Universal Newlines in Python 3 - so \n on Windows gets converted automagically by Python into \r\n  This is from PEP 278.
+
+#### Escape Sequences
+
+Like many languages Python supports a variety of escape sequences in order to be able to render special characters in a string.  \n and \t are just a couple of examples. 
+
+#### Raw Strings
+
+In order to handle things like URLs or file paths in Python there is the concept of a raw string.
+
+Example:
+
+```python
+path = r'C:\some\path\in\the\file\system'
+```
+
+Path would be rendered by Python's `print` command like this:
+
+```python
+'C:\some\path\in\the\file\system'
+```
+
+#### Strings as sequence types
+
+Strings are sequence types in Python, meaning that certain operations can be done automagically against a string -- for querying sequences.  Because of this feature, in Python there isn't a separate concept of a character type.  In the example below the string characters can be accessed via a 0 based index.
+
+Examples:
+
+```python
+s = 'parrot'
+s[4] ### would render 'o' ###
+
+```
+
+### Bytes
+
+Immutable sequences of bytes
+
+#### Bytes Literals
+
+b'data' or b"data"
+
+### Lists
+
+Mutable sequences of objects
+
+Delimited by square brackets
+
+Examples:
+
+```python
+[1, 9, 8]
+
+["apple", "orange", "pear"]
+
+['apple', 7, 'pear']
+
+### you can create an empty list and then use the append method to add things to it ###
+b = []
+b.append(1.618)
+b.append(1.414)
+
+### would result in ###
+[1.618, 1.414]
+
+### list constructor ###
+
+list("characters")
+
+### would result in ###
+['c', 'h', 'a', 'r', 'a', 'c', 't', 'e', 'r', 's']
+
+### you can take advantage of white space is Python to make long lists readable
+animals = ['bear', 
+           'giraffe',
+           'elephant',
+           'caterpillar',]
+
+### would result in ###
+['bear', 'giraffe', 'elephant', 'caterpillar']
+```
+
+### Dictionary
+
+Mutable mappings of keys to values
+
+#### Dict Literals
+
+```python
+{k1: v1, k2: v2}
+```
+
+### For Loop
+
+Similar to a For Each loop from other languages.
+
+Follows the pattern:
+
+```python
+for item in iterable:
+  ### body of the loop ###
+
+### iterate over a list ###
+cities = ["London", "New York", "Paris", "Oslo", "Helsinki"]
+
+for city in cities:
+  print(city)
+  
+### would result in ###
+London
+New York
+Paris
+Oslo
+Helsinki
+
+### iterate over a dict ###
+colors = {'crimson': 0xdc143c, 'coral': 0xff7f50, 'teal': 0x00}
+
+### we get the keys when looping so in turn we can use the keys to retrieve the associated values ###
+for color in colors:
+  print(color, colors[color])
+  
+### would result in ###
+coral 16744272
+teal 32896
+crimson 14423100 
+```
+
 
 
 
